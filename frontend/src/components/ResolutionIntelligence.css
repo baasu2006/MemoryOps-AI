@@ -1,0 +1,239 @@
+.res-intel {
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+}
+
+.header-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-badge-row h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.intel-live-badge {
+  background: rgba(79, 143, 247, 0.15);
+  color: var(--accent-blue);
+  border: 1px solid rgba(79, 143, 247, 0.3);
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.section-header .subtitle {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.top-recommendation-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(79, 143, 247, 0.05) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.banner-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.banner-content {
+  flex: 1;
+}
+
+.banner-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 6px;
+}
+
+.banner-action-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 8px;
+}
+
+.banner-rate-badge {
+  background: var(--accent-green);
+  color: #0f1117;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.banner-reason {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.table-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.intel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.intel-table th {
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-secondary);
+  text-align: left;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intel-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.intel-table tr:last-child td {
+  border-bottom: none;
+}
+
+.highlight-row {
+  background: rgba(79, 143, 247, 0.08);
+}
+
+.action-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.action-name-text {
+  font-weight: 500;
+}
+
+.recommended-pill {
+  background: rgba(52, 211, 153, 0.2);
+  color: var(--accent-green);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.count-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.attempts-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.success-badge {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--accent-green);
+}
+
+.failure-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--accent-red);
+}
+
+.rate-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rate-badge {
+  font-weight: 700;
+  font-size: 12px;
+  min-width: 38px;
+}
+
+.rate-green { color: var(--accent-green); }
+.rate-orange { color: var(--accent-orange); }
+.rate-red { color: var(--accent-red); }
+
+.rate-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 80px;
+}
+
+.rate-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.fill-green { background: var(--accent-green); }
+.fill-orange { background: var(--accent-orange); }
+.fill-red { background: var(--accent-red); }
+
+.no-data {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 20px !important;
+  font-style: italic;
+}
+
+.intel-footer-learning-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.intel-footer-learning-note .info-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.intel-footer-learning-note strong {
+  color: #e2e8f0;
+}

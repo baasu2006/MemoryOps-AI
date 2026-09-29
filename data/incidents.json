@@ -1,0 +1,692 @@
+[
+  {
+    "id": "INC-2026-0001",
+    "employeeId": "E1024",
+    "employeeName": "Arjun Rao",
+    "device": "Dell Latitude 5440",
+    "os": "Windows 11",
+    "category": "Laptop performance",
+    "issue": "Severe laptop slowdown during financial modeling",
+    "description": "Employee reported extreme UI latency and cooling fan running at maximum speed. Laptop unresponsive for minutes at a time.",
+    "diagnosticResults": {
+      "cpu": 94,
+      "ram": 87,
+      "disk": 72,
+      "problematicProcess": "CompanySync.exe",
+      "networkLatency": 45,
+      "uptimeDays": 14
+    },
+    "troubleshootingAttempts": [
+      {
+        "action": "restart_device",
+        "result": "failure",
+        "details": "Restarted Dell Latitude. CompanySync.exe restarted automatically on boot and CPU spiked back to 92% within 2 minutes."
+      },
+      {
+        "action": "clear_temp_files",
+        "result": "failure",
+        "details": "Purged 1.2 GB of temporary cached files. No reduction in CPU or RAM load; CompanySync remained pegged at 94%."
+      },
+      {
+        "action": "stop_company_sync",
+        "result": "success",
+        "details": "Terminated runaway CompanySync.exe process. CPU dropped immediately from 94% to 31%, RAM from 87% to 58%."
+      }
+    ],
+    "failedActions": ["restart_device", "clear_temp_files"],
+    "successfulActions": ["stop_company_sync"],
+    "authorization": {
+      "authorized": true,
+      "authorizedAt": "2026-09-01T10:15:00Z",
+      "authorizedBy": "E1024"
+    },
+    "actionExecuted": "stop_company_sync",
+    "beforeMetrics": { "cpu": 94, "ram": 87 },
+    "afterMetrics": { "cpu": 31, "ram": 58 },
+    "resolution": {
+      "resolved": true,
+      "resolvedBy": "stop_company_sync",
+      "timestamp": "2026-09-01T10:20:00Z"
+    },
+    "createdAt": "2026-09-01T09:30:00Z"
+  },
+  {
+    "id": "INC-2026-0002",
+    "employeeId": "E1024",
+    "employeeName": "Arjun Rao",
+    "device": "Dell Latitude 5440",
+    "os": "Windows 11",
+    "category": "Laptop performance",
+    "issue": "System sluggishness during Teams video presentation",
+    "description": "Video stuttering and audio dropped out while presenting monthly forecast deck. CPU was maxed out.",
+    "diagnosticResults": {
+      "cpu": 93,
+      "ram": 86,
+      "disk": 71,
+      "problematicProcess": "CompanySync.exe",
+      "networkLatency": 55,
+      "uptimeDays": 6
+    },
+    "troubleshootingAttempts": [
+      {
+        "action": "restart_device",
+        "result": "failure",
+        "details": "Rebooted laptop. Process relaunched and CPU returned to 90%."
+      },
+      {
+        "action": "stop_company_sync",
+        "result": "success",
+        "details": "Terminated CompanySync.exe background process. CPU normalized to 29%."
+      }
+    ],
+    "failedActions": ["restart_device"],
+    "successfulActions": ["stop_company_sync"],
+    "authorization": {
+      "authorized": true,
+      "authorizedAt": "2026-09-10T14:35:00Z",
+      "authorizedBy": "E1024"
+    },
+    "actionExecuted": "stop_company_sync",
+    "beforeMetrics": { "cpu": 93, "ram": 86 },
+    "afterMetrics": { "cpu": 29, "ram": 55 },
+    "resolution": {
+      "resolved": true,
+      "resolvedBy": "stop_company_sync",
+      "timestamp": "2026-09-10T14:40:00Z"
+    },
+    "createdAt": "2026-09-10T14:00:00Z"
+  },
+  {
+    "id": "INC-2026-0003",
+    "employeeId": "E1024",
+    "employeeName": "Arjun Rao",
+    "device": "Dell Latitude 5440",
+    "os": "Windows 11",
+    "category": "Laptop performance",
+    "issue": "Laptop slow again - high fan noise",
+    "description": "Laptop performance degraded after recent synchronization sync cycle.",
+    "diagnosticResults": {
+      "cpu": 95,
+      "ram": 88,
+      "disk": 73,
+      "problematicProcess": "CompanySync.exe",
+      "networkLatency": 40,
+      "uptimeDays": 20
+    },
+    "troubleshootingAttempts": [
+      {
+        "action": "stop_company_sync",
+        "result": "success",
+        "details": "Recalled previous Day 1 resolution and stopped CompanySync.exe. CPU dropped to 30%."
+      }
+    ],
+    "failedActions": [],
+    "successfulActions": ["stop_company_sync"],
+    "authorization": {
+      "authorized": true,
+      "authorizedAt": "2026-09-20T11:10:00Z",
+      "authorizedBy": "E1024"
+    },
+    "actionExecuted": "stop_company_sync",
+    "beforeMetrics": { "cpu": 95, "ram": 88 },
+    "afterMetrics": { "cpu": 30, "ram": 56 },
+    "resolution": {
+      "resolved": true,
+      "resolvedBy": "stop_company_sync",
+      "timestamp": "2026-09-20T11:15:00Z"
+    },
+    "createdAt": "2026-09-20T10:45:00Z"
+  },
+  {
+    "id": "INC-2026-0004",
+    "employeeId": "E1024",
+    "employeeName": "Arjun Rao",
+    "device": "Dell Latitude 5440",
+    "os": "Windows 11",
+    "category": "VPN",
+    "issue": "Corporate VPN timeout error",
+    "description": "GlobalProtect VPN failing to establish tunnel when connecting from home Wi-Fi.",
+    "diagnosticResults": { "cpu": 22, "ram": 48, "disk": 68, "problematicProcess": null, "networkLatency": 180 },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "failure", "details": "Reboot did not resolve routing table timeout." },
+      { "action": "reset_network", "result": "success", "details": "Flushed DNS and reset virtual adapter. VPN connected immediately." }
+    ],
+    "failedActions": ["restart_device"],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-05T08:45:00Z", "authorizedBy": "E1024" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-05T08:50:00Z" },
+    "createdAt": "2026-09-05T08:15:00Z"
+  },
+  {
+    "id": "INC-2026-0005",
+    "employeeId": "E1024",
+    "employeeName": "Arjun Rao",
+    "device": "Dell Latitude 5440",
+    "os": "Windows 11",
+    "category": "Outlook",
+    "issue": "Outlook disconnected and not syncing mail",
+    "description": "Exchange mailbox showing Disconnected status in status bar.",
+    "diagnosticResults": { "cpu": 15, "ram": 42, "disk": 68, "problematicProcess": "OUTLOOK.EXE" },
+    "troubleshootingAttempts": [
+      { "action": "restart_outlook", "result": "success", "details": "Restarted Outlook application process. Connection to Exchange restored." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["restart_outlook"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-12T13:20:00Z", "authorizedBy": "E1024" },
+    "actionExecuted": "restart_outlook",
+    "resolution": { "resolved": true, "resolvedBy": "restart_outlook", "timestamp": "2026-09-12T13:25:00Z" },
+    "createdAt": "2026-09-12T13:00:00Z"
+  },
+  {
+    "id": "INC-2026-0006",
+    "employeeId": "E1025",
+    "employeeName": "Sarah Chen",
+    "device": "MacBook Pro 16",
+    "os": "macOS Sonoma",
+    "category": "Wi-Fi",
+    "issue": "Wi-Fi dropping frequently in Design Studio",
+    "description": "MacBook continually loses 5GHz enterprise Wi-Fi beacon.",
+    "diagnosticResults": { "cpu": 18, "ram": 55, "disk": 40, "problematicProcess": null, "networkLatency": 120 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "success", "details": "Renewed DHCP lease and removed duplicate SSID configuration." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-02T11:00:00Z", "authorizedBy": "E1025" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-02T11:05:00Z" },
+    "createdAt": "2026-09-02T10:30:00Z"
+  },
+  {
+    "id": "INC-2026-0007",
+    "employeeId": "E1025",
+    "employeeName": "Sarah Chen",
+    "device": "MacBook Pro 16",
+    "os": "macOS Sonoma",
+    "category": "Software crash",
+    "issue": "Figma Desktop crashing on high-res artboard export",
+    "description": "App terminated unexpectedly with out of memory exception.",
+    "diagnosticResults": { "cpu": 82, "ram": 94, "disk": 42, "problematicProcess": "Figma Helper" },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "failure", "details": "Reboot cleared RAM, but crash reproduced upon opening the same cached artboard." },
+      { "action": "clear_temp_files", "result": "success", "details": "Purged Figma GPU and vector temp cache. Export succeeded." }
+    ],
+    "failedActions": ["restart_device"],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-15T15:30:00Z", "authorizedBy": "E1025" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-15T15:35:00Z" },
+    "createdAt": "2026-09-15T15:00:00Z"
+  },
+  {
+    "id": "INC-2026-0008",
+    "employeeId": "E1026",
+    "employeeName": "Michael Smith",
+    "device": "Lenovo ThinkPad T14",
+    "os": "Windows 11",
+    "category": "Printer",
+    "issue": "Unable to print sales quotes to Floor 3 HP LaserJet",
+    "description": "Print queue stalled with spooler communication error.",
+    "diagnosticResults": { "cpu": 10, "ram": 35, "disk": 30, "problematicProcess": "spoolsv.exe" },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "failure", "details": "Restart left corrupt spool files in queue." },
+      { "action": "reset_network", "result": "success", "details": "Reset network printing protocol port and cleared print spooler." }
+    ],
+    "failedActions": ["restart_device"],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-03T16:10:00Z", "authorizedBy": "E1026" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-03T16:15:00Z" },
+    "createdAt": "2026-09-03T15:45:00Z"
+  },
+  {
+    "id": "INC-2026-0009",
+    "employeeId": "E1026",
+    "employeeName": "Michael Smith",
+    "device": "Lenovo ThinkPad T14",
+    "os": "Windows 11",
+    "category": "VPN",
+    "issue": "VPN disconnects every 15 minutes during customer calls",
+    "description": "Session keep-alive failing on mobile hotspot tethering.",
+    "diagnosticResults": { "cpu": 12, "ram": 38, "disk": 30, "problematicProcess": null, "networkLatency": 95 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "failure", "details": "Resetting network did not change MTU size." },
+      { "action": "restart_device", "result": "success", "details": "Reboot refreshed VPN driver virtual adapter binding." }
+    ],
+    "failedActions": ["reset_network"],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-18T10:00:00Z", "authorizedBy": "E1026" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-18T10:05:00Z" },
+    "createdAt": "2026-09-18T09:30:00Z"
+  },
+  {
+    "id": "INC-2026-0010",
+    "employeeId": "E1027",
+    "employeeName": "Emma Johnson",
+    "device": "Microsoft Surface Pro 9",
+    "os": "Windows 11",
+    "category": "Login/authentication",
+    "issue": "Active Directory account locked after badge tap failure",
+    "description": "Smart card PIN lock triggered after password expiration.",
+    "diagnosticResults": { "cpu": 5, "ram": 28, "disk": 20, "problematicProcess": null },
+    "troubleshootingAttempts": [
+      { "action": "reset_password", "result": "success", "details": "Reset domain credential and unlocked AD account." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_password"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-04T08:30:00Z", "authorizedBy": "E1027" },
+    "actionExecuted": "reset_password",
+    "resolution": { "resolved": true, "resolvedBy": "reset_password", "timestamp": "2026-09-04T08:35:00Z" },
+    "createdAt": "2026-09-04T08:15:00Z"
+  },
+  {
+    "id": "INC-2026-0011",
+    "employeeId": "E1027",
+    "employeeName": "Emma Johnson",
+    "device": "Microsoft Surface Pro 9",
+    "os": "Windows 11",
+    "category": "Outlook",
+    "issue": "Shared HR inbox calendar appointments not visible",
+    "description": "Sync filter stuck on local Outlook OST cache.",
+    "diagnosticResults": { "cpu": 14, "ram": 45, "disk": 22, "problematicProcess": "OUTLOOK.EXE" },
+    "troubleshootingAttempts": [
+      { "action": "restart_outlook", "result": "success", "details": "Restarted Outlook in safe profile mode to rebuild calendar cache." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["restart_outlook"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-22T14:15:00Z", "authorizedBy": "E1027" },
+    "actionExecuted": "restart_outlook",
+    "resolution": { "resolved": true, "resolvedBy": "restart_outlook", "timestamp": "2026-09-22T14:20:00Z" },
+    "createdAt": "2026-09-22T13:50:00Z"
+  },
+  {
+    "id": "INC-2026-0012",
+    "employeeId": "E1028",
+    "employeeName": "David Lee",
+    "device": "HP EliteBook 840 G9",
+    "os": "Windows 10",
+    "category": "Software crash",
+    "issue": "Excel freezing on quarter-end consolidated macro sheet",
+    "description": "Excel CPU usage at 100% while evaluating VLOOKUP queries.",
+    "diagnosticResults": { "cpu": 88, "ram": 92, "disk": 65, "problematicProcess": "EXCEL.EXE" },
+    "troubleshootingAttempts": [
+      { "action": "clear_temp_files", "result": "failure", "details": "Cleared Excel auto-recover cache; calculation still froze." },
+      { "action": "restart_device", "result": "success", "details": "Full system reboot released unpaged pool memory leak." }
+    ],
+    "failedActions": ["clear_temp_files"],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-06T11:20:00Z", "authorizedBy": "E1028" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-06T11:25:00Z" },
+    "createdAt": "2026-09-06T10:45:00Z"
+  },
+  {
+    "id": "INC-2026-0013",
+    "employeeId": "E1028",
+    "employeeName": "David Lee",
+    "device": "HP EliteBook 840 G9",
+    "os": "Windows 10",
+    "category": "Application performance",
+    "issue": "SAP Client sluggish and timing out during report export",
+    "description": "SAP GUI GUI-container buffers bloated with 4 GB of local logs.",
+    "diagnosticResults": { "cpu": 60, "ram": 84, "disk": 88, "problematicProcess": "saplogon.exe" },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "failure", "details": "Reboot did not reclaim disk space." },
+      { "action": "clear_temp_files", "result": "success", "details": "Cleaned SAP temporary spool data and disk dropped to 45%." }
+    ],
+    "failedActions": ["restart_device"],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-24T16:00:00Z", "authorizedBy": "E1028" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-24T16:05:00Z" },
+    "createdAt": "2026-09-24T15:30:00Z"
+  },
+  {
+    "id": "INC-2026-0014",
+    "employeeId": "E1029",
+    "employeeName": "Olivia Davis",
+    "device": "MacBook Air M2",
+    "os": "macOS Ventura",
+    "category": "Wi-Fi",
+    "issue": "Conference room AirPlay and Wi-Fi disconnects",
+    "description": "Device failing mDNS discovery over Corporate Guest network.",
+    "diagnosticResults": { "cpu": 8, "ram": 40, "disk": 28, "problematicProcess": null, "networkLatency": 80 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "success", "details": "Re-associated Wi-Fi adapter with 802.1x enterprise certificate profile." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-07T09:30:00Z", "authorizedBy": "E1029" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-07T09:35:00Z" },
+    "createdAt": "2026-09-07T09:00:00Z"
+  },
+  {
+    "id": "INC-2026-0015",
+    "employeeId": "E1029",
+    "employeeName": "Olivia Davis",
+    "device": "MacBook Air M2",
+    "os": "macOS Ventura",
+    "category": "Software crash",
+    "issue": "Premiere Pro rendering engine crashing repeatedly",
+    "description": "Media encoder crashed with scratch disk write error.",
+    "diagnosticResults": { "cpu": 90, "ram": 89, "disk": 92, "problematicProcess": "Adobe Premiere Pro" },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "failure", "details": "Scratch disk still 92% full after reboot." },
+      { "action": "clear_temp_files", "result": "success", "details": "Deleted 18 GB of stale render cache. Video rendered successfully." }
+    ],
+    "failedActions": ["restart_device"],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-26T12:00:00Z", "authorizedBy": "E1029" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-26T12:05:00Z" },
+    "createdAt": "2026-09-26T11:20:00Z"
+  },
+  {
+    "id": "INC-2026-0016",
+    "employeeId": "E1030",
+    "employeeName": "James Wilson",
+    "device": "Dell XPS 15 9530",
+    "os": "Windows 11",
+    "category": "Application performance",
+    "issue": "Docker Desktop build times degraded from 1m to 14m",
+    "description": "WSL2 VHDX disk image ballooned to 85 GB causing I/O throttling.",
+    "diagnosticResults": { "cpu": 85, "ram": 92, "disk": 96, "problematicProcess": "vmmemWSL" },
+    "troubleshootingAttempts": [
+      { "action": "clear_temp_files", "result": "success", "details": "Pruned Docker builder cache and compacted virtual disk image." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-08T15:00:00Z", "authorizedBy": "E1030" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-08T15:05:00Z" },
+    "createdAt": "2026-09-08T14:30:00Z"
+  },
+  {
+    "id": "INC-2026-0017",
+    "employeeId": "E1030",
+    "employeeName": "James Wilson",
+    "device": "Dell XPS 15 9530",
+    "os": "Windows 11",
+    "category": "VPN",
+    "issue": "VPN routing drops access to AWS staging cluster",
+    "description": "Split-tunneling route table dropped 10.0.0.0/16 subnet.",
+    "diagnosticResults": { "cpu": 15, "ram": 44, "disk": 52, "problematicProcess": null, "networkLatency": 75 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "failure", "details": "Local adapter reset did not pull updated split-tunnel policy." },
+      { "action": "restart_device", "result": "success", "details": "Reboot pulled clean policy from VPN gateway." }
+    ],
+    "failedActions": ["reset_network"],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-17T11:45:00Z", "authorizedBy": "E1030" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-17T11:50:00Z" },
+    "createdAt": "2026-09-17T11:15:00Z"
+  },
+  {
+    "id": "INC-2026-0018",
+    "employeeId": "E1031",
+    "employeeName": "Sophia Taylor",
+    "device": "Lenovo ThinkPad X1 Carbon",
+    "os": "Windows 11",
+    "category": "Printer",
+    "issue": "Shipping label printer queue jammed with RAW data errors",
+    "description": "Zebra label printer buffer overflowing with malformed ZPL jobs.",
+    "diagnosticResults": { "cpu": 8, "ram": 34, "disk": 25, "problematicProcess": "printfilterpipelinesvc.exe" },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "success", "details": "Restart cleared local spooler memory and initialized clean print pipe." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-11T13:00:00Z", "authorizedBy": "E1031" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-11T13:05:00Z" },
+    "createdAt": "2026-09-11T12:30:00Z"
+  },
+  {
+    "id": "INC-2026-0019",
+    "employeeId": "E1031",
+    "employeeName": "Sophia Taylor",
+    "device": "Lenovo ThinkPad X1 Carbon",
+    "os": "Windows 11",
+    "category": "Login/authentication",
+    "issue": "Okta MFA push notifications failing on new smartphone",
+    "description": "Device token revoked in identity management provider.",
+    "diagnosticResults": { "cpu": 4, "ram": 30, "disk": 25, "problematicProcess": null },
+    "troubleshootingAttempts": [
+      { "action": "reset_password", "result": "success", "details": "Re-registered MFA device and generated temporary bypass code." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_password"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-21T09:00:00Z", "authorizedBy": "E1031" },
+    "actionExecuted": "reset_password",
+    "resolution": { "resolved": true, "resolvedBy": "reset_password", "timestamp": "2026-09-21T09:05:00Z" },
+    "createdAt": "2026-09-21T08:45:00Z"
+  },
+  {
+    "id": "INC-2026-0020",
+    "employeeId": "E1032",
+    "employeeName": "William Brown",
+    "device": "MacBook Pro 14",
+    "os": "macOS Sonoma",
+    "category": "Outlook",
+    "issue": "Outlook search indexing broken - no results returned",
+    "description": "Spotlight index corrupt for Outlook database files.",
+    "diagnosticResults": { "cpu": 12, "ram": 46, "disk": 35, "problematicProcess": "mdworker_shared" },
+    "troubleshootingAttempts": [
+      { "action": "restart_outlook", "result": "failure", "details": "Restarted Outlook but Spotlight index remained unindexed." },
+      { "action": "clear_temp_files", "result": "success", "details": "Cleared Microsoft User Data cache and rebuilt search index." }
+    ],
+    "failedActions": ["restart_outlook"],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-13T10:45:00Z", "authorizedBy": "E1032" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-13T10:50:00Z" },
+    "createdAt": "2026-09-13T10:15:00Z"
+  },
+  {
+    "id": "INC-2026-0021",
+    "employeeId": "E1032",
+    "employeeName": "William Brown",
+    "device": "MacBook Pro 14",
+    "os": "macOS Sonoma",
+    "category": "Device restart",
+    "issue": "Audio core daemon hung - no sound output in meetings",
+    "description": "coreaudiod thread deadlocked after hot-unplugging external monitor.",
+    "diagnosticResults": { "cpu": 50, "ram": 40, "disk": 35, "problematicProcess": "coreaudiod" },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "success", "details": "Reboot initialized clean audio daemon state." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-25T14:20:00Z", "authorizedBy": "E1032" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-25T14:25:00Z" },
+    "createdAt": "2026-09-25T14:00:00Z"
+  },
+  {
+    "id": "INC-2026-0022",
+    "employeeId": "E1033",
+    "employeeName": "Isabella Miller",
+    "device": "Microsoft Surface Laptop 5",
+    "os": "Windows 11",
+    "category": "Network",
+    "issue": "Legal document repository unreachable (DNS resolution failed)",
+    "description": "Internal NetBIOS and DNS suffixes dropped from adapter config.",
+    "diagnosticResults": { "cpu": 6, "ram": 32, "disk": 22, "problematicProcess": null, "networkLatency": 200 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "success", "details": "Flushed DNS cache and renewed corporate DHCP options." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-14T16:10:00Z", "authorizedBy": "E1033" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-14T16:15:00Z" },
+    "createdAt": "2026-09-14T15:45:00Z"
+  },
+  {
+    "id": "INC-2026-0023",
+    "employeeId": "E1033",
+    "employeeName": "Isabella Miller",
+    "device": "Microsoft Surface Laptop 5",
+    "os": "Windows 11",
+    "category": "Laptop performance",
+    "issue": "Surface laptop running very hot on battery power",
+    "description": "Search indexer running continuously in background.",
+    "diagnosticResults": { "cpu": 76, "ram": 82, "disk": 30, "problematicProcess": "SearchIndexer.exe" },
+    "troubleshootingAttempts": [
+      { "action": "clear_temp_files", "result": "failure", "details": "Clearing temp files did not stop indexer loop." },
+      { "action": "restart_device", "result": "success", "details": "Reboot paused background search indexer and restored thermal state." }
+    ],
+    "failedActions": ["clear_temp_files"],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-27T10:00:00Z", "authorizedBy": "E1033" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-27T10:05:00Z" },
+    "createdAt": "2026-09-27T09:30:00Z"
+  },
+  {
+    "id": "INC-2026-0024",
+    "employeeId": "E1025",
+    "employeeName": "Sarah Chen",
+    "device": "MacBook Pro 16",
+    "os": "macOS Sonoma",
+    "category": "Application performance",
+    "issue": "Adobe Photoshop scratch disk full during banner export",
+    "description": "App failed with scratch disk write permissions and space error.",
+    "diagnosticResults": { "cpu": 60, "ram": 85, "disk": 95, "problematicProcess": "Adobe Photoshop" },
+    "troubleshootingAttempts": [
+      { "action": "clear_temp_files", "result": "success", "details": "Purged 14 GB of Photoshop auto-recovery cache files." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-23T15:30:00Z", "authorizedBy": "E1025" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-23T15:35:00Z" },
+    "createdAt": "2026-09-23T15:00:00Z"
+  },
+  {
+    "id": "INC-2026-0025",
+    "employeeId": "E1026",
+    "employeeName": "Michael Smith",
+    "device": "Lenovo ThinkPad T14",
+    "os": "Windows 11",
+    "category": "Network",
+    "issue": "Ethernet docking station port unresponsive",
+    "description": "Realtek USB Gigabit Ethernet controller in error state.",
+    "diagnosticResults": { "cpu": 8, "ram": 35, "disk": 30, "problematicProcess": null, "networkLatency": 0 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "failure", "details": "Reset failed to reload USB bus driver." },
+      { "action": "restart_device", "result": "success", "details": "Reboot re-enumerated PCIe USB dock controller." }
+    ],
+    "failedActions": ["reset_network"],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-26T11:00:00Z", "authorizedBy": "E1026" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-26T11:05:00Z" },
+    "createdAt": "2026-09-26T10:30:00Z"
+  },
+  {
+    "id": "INC-2026-0026",
+    "employeeId": "E1028",
+    "employeeName": "David Lee",
+    "device": "HP EliteBook 840 G9",
+    "os": "Windows 10",
+    "category": "Printer",
+    "issue": "Financial audit report double-sided printing inverted",
+    "description": "Duplex printing driver setting misaligned with PCL6 driver.",
+    "diagnosticResults": { "cpu": 4, "ram": 30, "disk": 60, "problematicProcess": null },
+    "troubleshootingAttempts": [
+      { "action": "restart_device", "result": "success", "details": "Reboot reloaded default printer driver profile." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["restart_device"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-19T14:00:00Z", "authorizedBy": "E1028" },
+    "actionExecuted": "restart_device",
+    "resolution": { "resolved": true, "resolvedBy": "restart_device", "timestamp": "2026-09-19T14:05:00Z" },
+    "createdAt": "2026-09-19T13:30:00Z"
+  },
+  {
+    "id": "INC-2026-0027",
+    "employeeId": "E1030",
+    "employeeName": "James Wilson",
+    "device": "Dell XPS 15 9530",
+    "os": "Windows 11",
+    "category": "Software crash",
+    "issue": "VS Code TypeScript Language Server crashing constantly",
+    "description": "tsserver node process crashing due to stale tsconfig cache.",
+    "diagnosticResults": { "cpu": 72, "ram": 88, "disk": 55, "problematicProcess": "node.exe" },
+    "troubleshootingAttempts": [
+      { "action": "clear_temp_files", "result": "success", "details": "Purged TypeScript compiler cache and restored IDE stability." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["clear_temp_files"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-22T17:30:00Z", "authorizedBy": "E1030" },
+    "actionExecuted": "clear_temp_files",
+    "resolution": { "resolved": true, "resolvedBy": "clear_temp_files", "timestamp": "2026-09-22T17:35:00Z" },
+    "createdAt": "2026-09-22T17:00:00Z"
+  },
+  {
+    "id": "INC-2026-0028",
+    "employeeId": "E1027",
+    "employeeName": "Emma Johnson",
+    "device": "Microsoft Surface Pro 9",
+    "os": "Windows 11",
+    "category": "Wi-Fi",
+    "issue": "Surface Pro dropping Wi-Fi upon waking from sleep",
+    "description": "Modern standby power management turning off Wi-Fi NIC.",
+    "diagnosticResults": { "cpu": 8, "ram": 35, "disk": 22, "problematicProcess": null, "networkLatency": 90 },
+    "troubleshootingAttempts": [
+      { "action": "reset_network", "result": "success", "details": "Reset network stack and disabled aggressive power saving on Wi-Fi adapter." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-28T09:15:00Z", "authorizedBy": "E1027" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-28T09:20:00Z" },
+    "createdAt": "2026-09-28T08:50:00Z"
+  },
+  {
+    "id": "INC-2026-0029",
+    "employeeId": "E1029",
+    "employeeName": "Olivia Davis",
+    "device": "MacBook Air M2",
+    "os": "macOS Ventura",
+    "category": "Login/authentication",
+    "issue": "Google Workspace SSO session looping infinitely",
+    "description": "Corrupted Safari cookie jar causing redirect loop.",
+    "diagnosticResults": { "cpu": 5, "ram": 35, "disk": 28, "problematicProcess": null },
+    "troubleshootingAttempts": [
+      { "action": "reset_password", "result": "success", "details": "Revoked OAuth tokens and issued fresh SAML assertion." }
+    ],
+    "failedActions": [],
+    "successfulActions": ["reset_password"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-21T11:00:00Z", "authorizedBy": "E1029" },
+    "actionExecuted": "reset_password",
+    "resolution": { "resolved": true, "resolvedBy": "reset_password", "timestamp": "2026-09-21T11:05:00Z" },
+    "createdAt": "2026-09-21T10:30:00Z"
+  },
+  {
+    "id": "INC-2026-0030",
+    "employeeId": "E1031",
+    "employeeName": "Sophia Taylor",
+    "device": "Lenovo ThinkPad X1 Carbon",
+    "os": "Windows 11",
+    "category": "Outlook",
+    "issue": "Outlook inbox stuck in offline mode after network switch",
+    "description": "Autodiscover connection pool stalled on previous cellular APN.",
+    "diagnosticResults": { "cpu": 10, "ram": 38, "disk": 25, "problematicProcess": "OUTLOOK.EXE" },
+    "troubleshootingAttempts": [
+      { "action": "restart_outlook", "result": "failure", "details": "Restart alone did not refresh network route." },
+      { "action": "reset_network", "result": "success", "details": "Reset network interfaces; Outlook transitioned to Connected status." }
+    ],
+    "failedActions": ["restart_outlook"],
+    "successfulActions": ["reset_network"],
+    "authorization": { "authorized": true, "authorizedAt": "2026-09-27T14:30:00Z", "authorizedBy": "E1031" },
+    "actionExecuted": "reset_network",
+    "resolution": { "resolved": true, "resolvedBy": "reset_network", "timestamp": "2026-09-27T14:35:00Z" },
+    "createdAt": "2026-09-27T14:00:00Z"
+  }
+]

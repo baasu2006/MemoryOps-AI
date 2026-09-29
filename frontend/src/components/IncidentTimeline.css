@@ -1,0 +1,235 @@
+.timeline-panel {
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.timeline-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-header-row h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.lifecycle-tag {
+  background: rgba(167, 139, 250, 0.15);
+  color: var(--accent-purple);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-day-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.timeline-day-card.expanded {
+  border-color: var(--accent-blue);
+}
+
+.timeline-day-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.timeline-day-header:hover {
+  background: var(--bg-hover);
+}
+
+.day-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.day20-badge {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
+.day1-badge {
+  background: var(--accent-blue);
+  color: #fff;
+}
+
+.day-summary {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.day-date {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.day-toggle-arrow {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.timeline-steps-flow {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  gap: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+.timeline-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.step-node {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step-node.completed {
+  background: rgba(79, 143, 247, 0.2);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.step-node.memory-node {
+  background: rgba(167, 139, 250, 0.2);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.step-node.failed-node {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.step-node.success-node {
+  background: rgba(52, 211, 153, 0.2);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.highlight-purple { color: var(--accent-purple); }
+.highlight-green { color: var(--accent-green); }
+.highlight-red { color: var(--accent-red); }
+
+.step-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.failed-attempts-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.tag-failed {
+  font-size: 10.5px;
+  color: var(--accent-red);
+  font-family: monospace;
+}
+
+.historical-incident-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hist-id {
+  font-size: 10.5px;
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.hist-date {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.hist-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hist-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.hist-resolution-tag {
+  font-size: 10px;
+  color: var(--accent-green);
+  margin-top: 2px;
+}
